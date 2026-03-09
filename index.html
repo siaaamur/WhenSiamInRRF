@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Expert Portfolio | Jiam Un Rahman</title>
+    <meta name="description" content="পেশাদার এসইও বিশেষজ্ঞ, ডিজিটাল মার্কেটিং এবং চাউডাল-এর সহকারী পরিচালক জিয়াম উন রহমানের পোর্টফোলিও।">
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/x-icon"> <style>
+        /* CSS Variables for Consistency */
+        :root {
+            --primary-color: #007bff; /* modern blue */
+            --accent-color: #28a745; /* successful green */
+            --dark-bg: #1a1a1d; /* attractive dark grey */
+            --light-bg: #fff;
+            --text-on-dark: #f0f0f0;
+            --text-on-light: #333;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: var(--text-on-light); background: #f4f4f4; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* Modern Navigation - Responsive */
+        nav { background: var(--dark-bg); color: var(--text-on-dark); padding: 1.5rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .logo { font-size: 1.5rem; font-weight: bold; cursor: pointer; color: var(--primary-color); }
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+        .nav-links li a { color: var(--text-on-dark); text-decoration: none; font-weight: 500; cursor: pointer; transition: var(--transition); padding-bottom: 5px; }
+        .nav-links li a:hover, .nav-links li a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
+
+        /* Main Container */
+        .container { width: 90%; max-width: 1200px; margin: auto; overflow: hidden; padding: 40px 10px; }
+
+        /* attractive section styling */
+        section { background: var(--light-bg); margin: 30px 0; padding: 40px; border-radius: 12px; box-shadow: var(--shadow); transition: transform 0.3s ease-in-out; }
+        section:hover { transform: translateY(-3px); }
+        h2 { border-left: 5px solid var(--primary-color); padding-left: 15px; margin-bottom: 25px; color: var(--dark-bg); }
+
+        /* Responsive Buttons */
+        .btn { display: inline-block; background: var(--accent-color); color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 30px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; transition: var(--transition); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .btn:hover { background: #1e7e34; transform: scale(1.05); }
+
+        /* --- HOME SECTION (Hero) --- */
+        #home { background: linear-gradient(135deg, var(--dark-bg), #2a2a2e); color: var(--text-on-dark); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80vh; margin-top: 0; border-radius: 0 0 50px 50px; }
+        #home h1 { font-size: 3rem; margin-bottom: 15px; color: var(--primary-color); }
+        #home p { font-size: 1.2rem; margin-bottom: 25px; max-width: 600px; }
+
+        /* --- EXPERIENCE SECTION --- */
+        .experience-list { list-style: none; }
+        .experience-list li { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #eee; transition: var(--transition); }
+        .experience-list li:hover { border-left: 4px solid var(--primary-color); background: #fdfdfd; }
+        .exp-title { font-weight: bold; color: var(--dark-bg); font-size: 1.1rem; }
+        .exp-company { color: var(--primary-color); font-weight: 500; }
+
+        /* --- MODERN PROJECTS SECTION (Grid) --- */
+        #projects { background: transparent; box-shadow: none; padding: 0; }
+        #projects h2 { background: #fff; padding: 20px; border-radius: 8px; box-shadow: var(--shadow); width: 100%; margin-bottom: 30px; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); position: relative; }
+        .project-card:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .project-img { width: 100%; height: 200px; background-color: #eee; background-size: cover; background-position: center; }
+        .project-details { padding: 20px; }
+        .project-details h3 { margin-bottom: 10px; color: var(--dark-bg); }
+        .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+        .tag { background: #e0f0ff; color: var(--primary-color); padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+
+        /* --- MODAL (Responsive Form) --- */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); animation: fadeIn 0.3s; }
+        .modal-content { background: #fff; margin: 10% auto; padding: 30px; width: 90%; max-width: 400px; border-radius: 12px; position: relative; text-align: center; }
+        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #aaa; }
+        .close-modal:hover { color: #333; }
+        .modal-content h3 { margin-bottom: 20px; color: var(--dark-bg); }
+        .modal-content input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; }
+        .modal-content .btn { width: 100%; margin-top: 15px; }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            #home h1 { font-size: 2.2rem; }
+            #home p { font-size: 1rem; }
+            .nav-links { display: none; /* Hide on mobile by default */ flex-direction: column; width: 100%; background: var(--dark-bg); position: absolute; top: 100%; left: 0; text-align: center; padding: 1rem 0; box-shadow: 0 5px 10px rgba(0,0,0,0.3); }
+            .nav-links.show { display: flex; } /* Toggle this class with JS */
+            .nav-toggle { display: block; font-size: 1.5rem; color: #fff; cursor: pointer; } /* Show menu icon */
+            section { padding: 25px; }
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        /* Mobile menu icon (hidden by default) */
+        .nav-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #fff; }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo" onclick="window.scrollTo(0,0)">জিয়াম</div>
+    <div class="nav-toggle" onclick="toggleMenu()">☰</div> <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">হোম</a></li>
+        <li><a href="#about">আমার সম্পর্কে</a></li>
+        <li><a href="#experience">অভিজ্ঞতা</a></li>
+        <li><a href="#projects">প্রকল্পগুলি</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <h1>পেশাদার এসইও বিশেষজ্ঞ</h1>
+    <p>আমি জিয়াম উন রহমান। কৌশলগত এসইও (SEO) এবং ডিজিটাল মার্কেটিং এর মাধ্যমে আমি আপনার ব্যবসার অনলাইন উপস্থিতি ও র‍্যাঙ্কিং বৃদ্ধিতে সহায়তা করি।</p>
+    <button class="btn" onclick="openModal()">Start Project</button>
+</section>
+
+<div class="container">
+    
+    <section id="about">
+        <h2>আমার সম্পর্কে</h2>
+        <p>আমি একজন দূরদর্শী এবং কৌশলগত চিন্তাবিদ। পূর্বে আমি **চাউডাল (Chaldal)**-এ সহকারী পরিচালক হিসেবে কাজ করেছি। সেখানে আমি **১১০০+ ব্লু-কলার কর্মচারী** নিয়োগ ও পরিচালনা করেছি এবং একটি সফল কাস্টমার সাকসেস ও টেক-অপস টিম গঠন করেছি। আমার এই অভিজ্ঞতা আমাকে ডেটা-চালিত এবং ফলাফল-মুখী এসইও কৌশল তৈরি করতে সহায়তা করে।</p>
+    </section>
+
+    <section id="experience">
+        <h2>অভিজ্ঞতা</h2>
+        <ul class="experience-list">
+            <li>
+                <div class="exp-title">সহকারী পরিচালক - টেক-অপস এবং নিয়োগ</div>
+                <div class="exp-company">চাউডাল (Chaldal)</div>
+                <p>১১০০+ ব্লু-কলার কর্মচারীদের নিয়োগ, প্রশিক্ষণ এবং দৈনিক ব্যবস্থাপনা। কাস্টমার সাকসেস এবং টেকনিক্যাল অপারেশনস টিমের নেতৃত্ব দান।</p>
+            </li>
+            <li>
+                <div class="exp-title">এসইও এবং ডিজিটাল মার্কেটিং বিশেষজ্ঞ</div>
+                <div class="exp-company">ফ্রিল্যান্সিং / স্বাধীন উপদেষ্টা</div>
+                <p>বিভিন্ন ই-কমার্স এবং লোকাল বিজনেসের জন্য সার্চ ইঞ্জিন অপ্টিমাইজেশন কৌশল তৈরি এবং বাস্তবায়ন।</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>প্রকল্পগুলি</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://via.placeholder.com/300x200?text=E-commerce+SEO');"></div>
+                <div class="project-details">
+                    <div class="project-tags">
+                        <span class="tag">Technical SEO</span>
+                        <span class="tag">On-Page</span>
+                    </div>
+                    <h3>ই-কমার্স র‍্যাঙ্কিং বৃদ্ধি</h3>
+                    <p>একটি ফ্যাশন ব্র্যান্ডের অর্গানিক ট্রাফিক ৩ মাসে ৪5% বৃদ্ধি করা হয়েছে।</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://via.placeholder.com/300x200?text=Local+SEO+Audits');"></div>
+                <div class="project-details">
+                    <div class="project-tags">
+                        <span class="tag">Local SEO</span>
+                        <span class="tag">Link Building</span>
+                    </div>
+                    <h3>লোকাল বিজনেসের দৃশ্যমানতা</h3>
+                    <p>একটি রেস্তোরাঁকে গুগল ম্যাপস (GMB)-এর শীর্ষ ৩-এ নিয়ে আসা হয়েছে।</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://via.placeholder.com/300x200?text=Chaldal+Recruitment+Data');"></div>
+                <div class="project-details">
+                    <div class="project-tags">
+                        <span class="tag">Operations</span>
+                        <span class="tag">Recruitment</span>
+                    </div>
+                    <h3>১১০০+ কর্মচারী নিয়োগ প্রজেক্ট</h3>
+                    <p>চাউডাল-এর টেক-অপস টিমের জন্য ব্লু-কলার কর্মচারী নিয়োগের সফল মডেল তৈরি।</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">×</span>
+        <h3>যোগাযোগ করুন</h3>
+        <p>আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।</p>
+        <input type="text" placeholder="আপনার নাম" required>
+        <input type="email" placeholder="আপনার ইমেল" required>
+        <input type="text" placeholder="হোয়াটসঅ্যাপ নম্বর" required>
+        <br>
+        <button class="btn" onclick="closeModal()">জমা দিন</button>
+    </div>
+</div>
+
+<script>
+    // Smooth Scrolling & Active Link Highlight
+    const sections = document.querySelectorAll('section');
+    const navA = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navA.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    // Modal Functions
+    function openModal() { document.getElementById('projectModal').style.display = 'block'; }
+    function closeModal() { document.getElementById('projectModal').style.display = 'none'; }
+</script>
+
+</body>
+</html>
